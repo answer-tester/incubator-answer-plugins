@@ -1,10 +1,10 @@
-module github.com/apache/incubator-answer-plugins/reviewer-basic
+module github.com/answer-tester/incubator-answer-plugins/reviewer-basic2
 
 go 1.19
 
 require (
-	github.com/apache/incubator-answer v1.3.6
-	github.com/apache/incubator-answer-plugins/util v1.0.2
+	github.com/answer-tester/incubator-answer v1.3.6
+	github.com/answer-tester/incubator-answer-plugins/util v1.0.2
 	github.com/segmentfault/pacman v1.0.5-0.20230822083413-c0075a2d401f
 )
 
