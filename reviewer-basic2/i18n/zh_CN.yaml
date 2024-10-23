@@ -16,7 +16,7 @@
 # under the License.
 
 plugin:
-  basic_reviewer:
+  basic_reviewer2:
     backend:
       info:
         name:
