@@ -1,4 +1,4 @@
-module github.com/answer-tester/incubator-answer-plugins/editor-chart
+module github.com/answer-tester/incubator-answer-plugins/upload-files
 
 go 1.19
 
