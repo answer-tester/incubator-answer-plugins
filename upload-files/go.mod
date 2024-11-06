@@ -3,7 +3,7 @@ module github.com/answer-tester/incubator-answer-plugins/upload-files
 go 1.19
 
 require (
-	github.com/apache/incubator-answer v1.3.6
+	github.com/answer-tester/incubator-answer v1.3.6
 	github.com/answer-tester/incubator-answer-plugins/util v1.0.3 // indirect
 )
 
