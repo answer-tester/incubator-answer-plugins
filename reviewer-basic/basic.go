@@ -23,11 +23,12 @@ import (
 	"embed"
 	"encoding/json"
 	"fmt"
-	"github.com/apache/incubator-answer-plugins/util"
 	"strings"
 
-	"github.com/apache/incubator-answer-plugins/reviewer-basic/i18n"
-	"github.com/apache/incubator-answer/plugin"
+	"github.com/answer-tester/incubator-answer-plugins/util"
+
+	"github.com/answer-tester/incubator-answer-plugins/reviewer-basic/i18n"
+	"github.com/answer-tester/incubator-answer/plugin"
 	myI18n "github.com/segmentfault/pacman/i18n"
 )
 
