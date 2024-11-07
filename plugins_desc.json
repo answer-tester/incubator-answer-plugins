@@ -193,6 +193,11 @@
       "link": "https://github.com/apache/incubator-answer-plugins/tree/main/reviewer-basic"
     },
     {
+      "name": "Review Basic2",
+      "desc": "Generic review rule plugin2",
+      "link": "https://github.com/answer-tester/incubator-answer-plugins/tree/main/reviewer-basic2"
+    },
+    {
       "name": "Algolia Search",
       "desc": "Use Algolia as a search engine.",
       "link": "https://github.com/apache/incubator-answer-plugins/tree/main/search-algolia"
