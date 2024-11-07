@@ -36,7 +36,7 @@ import (
 var Info embed.FS
 
 type Reviewer2 struct {
-	Config *ReviewerConfig
+	Config *ReviewerConfig2
 }
 
 type ReviewerConfig2 struct {
