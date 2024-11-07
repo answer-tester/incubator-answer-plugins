@@ -20,7 +20,7 @@ plugin:
     backend:
       info:
         name:
-          other: Review Basic
+          other: Review Basic2
         description:
           other: Generic review rule plugin
       config:

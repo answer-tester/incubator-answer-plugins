@@ -20,7 +20,7 @@ plugin:
     backend:
       info:
         name:
-          other: 基础审核插件
+          other: 基础审核插件2
         description:
           other: 基础的通用审核插件
       config:
