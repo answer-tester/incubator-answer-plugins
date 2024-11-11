@@ -17,7 +17,7 @@
  * under the License.
  */
 
-package google
+package google2
 
 import (
 	"context"
@@ -38,11 +38,11 @@ import (
 //go:embed  info.yaml
 var Info embed.FS
 
-type Connector struct {
-	Config *ConnectorConfig
+type Connector2 struct {
+	Config *Connector2Config
 }
 
-type ConnectorConfig struct {
+type Connector2Config struct {
 	ClientID     string `json:"client_id"`
 	ClientSecret string `json:"client_secret"`
 }
@@ -60,12 +60,12 @@ type AuthUserInfo struct {
 }
 
 func init() {
-	plugin.Register(&Connector{
-		Config: &ConnectorConfig{},
+	plugin.Register(&Connector2{
+		Config: &Connector2Config{},
 	})
 }
 
-func (g *Connector) Info() plugin.Info {
+func (g *Connector2) Info() plugin.Info {
 	info := &util.Info{}
 	info.GetInfo(Info)
 
@@ -79,19 +79,19 @@ func (g *Connector) Info() plugin.Info {
 	}
 }
 
-func (g *Connector) ConnectorLogoSVG() string {
+func (g *Connector2) ConnectorLogoSVG() string {
 	return `PHN2ZyBpZD0iQ2FwYV8xIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxNTAgMTUwOyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMTUwIDE1MCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojMUE3M0U4O30KCS5zdDF7ZmlsbDojRUE0MzM1O30KCS5zdDJ7ZmlsbDojNDI4NUY0O30KCS5zdDN7ZmlsbDojRkJCQzA0O30KCS5zdDR7ZmlsbDojMzRBODUzO30KCS5zdDV7ZmlsbDojNENBRjUwO30KCS5zdDZ7ZmlsbDojMUU4OEU1O30KCS5zdDd7ZmlsbDojRTUzOTM1O30KCS5zdDh7ZmlsbDojQzYyODI4O30KCS5zdDl7ZmlsbDojRkJDMDJEO30KCS5zdDEwe2ZpbGw6IzE1NjVDMDt9Cgkuc3QxMXtmaWxsOiMyRTdEMzI7fQoJLnN0MTJ7ZmlsbDojRjZCNzA0O30KCS5zdDEze2ZpbGw6I0U1NDMzNTt9Cgkuc3QxNHtmaWxsOiM0MjgwRUY7fQoJLnN0MTV7ZmlsbDojMzRBMzUzO30KCS5zdDE2e2NsaXAtcGF0aDp1cmwoI1NWR0lEXzJfKTt9Cgkuc3QxN3tmaWxsOiMxODgwMzg7fQoJLnN0MTh7b3BhY2l0eTowLjI7ZmlsbDojRkZGRkZGO2VuYWJsZS1iYWNrZ3JvdW5kOm5ldyAgICA7fQoJLnN0MTl7b3BhY2l0eTowLjM7ZmlsbDojMEQ2NTJEO2VuYWJsZS1iYWNrZ3JvdW5kOm5ldyAgICA7fQoJLnN0MjB7Y2xpcC1wYXRoOnVybCgjU1ZHSURfNF8pO30KCS5zdDIxe29wYWNpdHk6MC4zO2ZpbGw6dXJsKCNfNDVfc2hhZG93XzFfKTtlbmFibGUtYmFja2dyb3VuZDpuZXcgICAgO30KCS5zdDIye2NsaXAtcGF0aDp1cmwoI1NWR0lEXzZfKTt9Cgkuc3QyM3tmaWxsOiNGQTdCMTc7fQoJLnN0MjR7b3BhY2l0eTowLjM7ZmlsbDojMTc0RUE2O2VuYWJsZS1iYWNrZ3JvdW5kOm5ldyAgICA7fQoJLnN0MjV7b3BhY2l0eTowLjM7ZmlsbDojQTUwRTBFO2VuYWJsZS1iYWNrZ3JvdW5kOm5ldyAgICA7fQoJLnN0MjZ7b3BhY2l0eTowLjM7ZmlsbDojRTM3NDAwO2VuYWJsZS1iYWNrZ3JvdW5kOm5ldyAgICA7fQoJLnN0Mjd7ZmlsbDp1cmwoI0ZpbmlzaF9tYXNrXzFfKTt9Cgkuc3QyOHtmaWxsOiNGRkZGRkY7fQoJLnN0Mjl7ZmlsbDojMEM5RDU4O30KCS5zdDMwe29wYWNpdHk6MC4yO2ZpbGw6IzAwNEQ0MDtlbmFibGUtYmFja2dyb3VuZDpuZXcgICAgO30KCS5zdDMxe29wYWNpdHk6MC4yO2ZpbGw6IzNFMjcyMztlbmFibGUtYmFja2dyb3VuZDpuZXcgICAgO30KCS5zdDMye2ZpbGw6I0ZGQzEwNzt9Cgkuc3QzM3tvcGFjaXR5OjAuMjtmaWxsOiMxQTIzN0U7ZW5hYmxlLWJhY2tncm91bmQ6bmV3ICAgIDt9Cgkuc3QzNHtvcGFjaXR5OjAuMjt9Cgkuc3QzNXtmaWxsOiMxQTIzN0U7fQoJLnN0MzZ7ZmlsbDp1cmwoI1NWR0lEXzdfKTt9Cgkuc3QzN3tmaWxsOiNGQkJDMDU7fQoJLnN0Mzh7Y2xpcC1wYXRoOnVybCgjU1ZHSURfOV8pO2ZpbGw6I0U1MzkzNTt9Cgkuc3QzOXtjbGlwLXBhdGg6dXJsKCNTVkdJRF8xMV8pO2ZpbGw6I0ZCQzAyRDt9Cgkuc3Q0MHtjbGlwLXBhdGg6dXJsKCNTVkdJRF8xM18pO2ZpbGw6I0U1MzkzNTt9Cgkuc3Q0MXtjbGlwLXBhdGg6dXJsKCNTVkdJRF8xNV8pO2ZpbGw6I0ZCQzAyRDt9Cjwvc3R5bGU+PGc+PHBhdGggY2xhc3M9InN0MTQiIGQ9Ik0xMjAsNzYuMWMwLTMuMS0wLjMtNi4zLTAuOC05LjNINzUuOXYxNy43aDI0LjhjLTEsNS43LTQuMywxMC43LTkuMiwxMy45bDE0LjgsMTEuNSAgIEMxMTUsMTAxLjgsMTIwLDkwLDEyMCw3Ni4xTDEyMCw3Ni4xeiIvPjxwYXRoIGNsYXNzPSJzdDE1IiBkPSJNNzUuOSwxMjAuOWMxMi40LDAsMjIuOC00LjEsMzAuNC0xMS4xTDkxLjUsOTguNGMtNC4xLDIuOC05LjQsNC40LTE1LjYsNC40Yy0xMiwwLTIyLjEtOC4xLTI1LjgtMTguOSAgIEwzNC45LDk1LjZDNDIuNywxMTEuMSw1OC41LDEyMC45LDc1LjksMTIwLjl6Ii8+PHBhdGggY2xhc3M9InN0MTIiIGQ9Ik01MC4xLDgzLjhjLTEuOS01LjctMS45LTExLjksMC0xNy42TDM0LjksNTQuNGMtNi41LDEzLTYuNSwyOC4zLDAsNDEuMkw1MC4xLDgzLjh6Ii8+PHBhdGggY2xhc3M9InN0MTMiIGQ9Ik03NS45LDQ3LjNjNi41LTAuMSwxMi45LDIuNCwxNy42LDYuOUwxMDYuNiw0MUM5OC4zLDMzLjIsODcuMywyOSw3NS45LDI5LjFjLTE3LjQsMC0zMy4yLDkuOC00MSwyNS4zICAgbDE1LjIsMTEuOEM1My44LDU1LjMsNjMuOSw0Ny4zLDc1LjksNDcuM3oiLz48L2c+PC9zdmc+`
 }
 
-func (g *Connector) ConnectorName() plugin.Translator {
+func (g *Connector2) ConnectorName() plugin.Translator {
 	return plugin.MakeTranslator(i18n.ConnectorName)
 }
 
-func (g *Connector) ConnectorSlugName() string {
+func (g *Connector2) ConnectorSlugName() string {
 	return "google"
 }
 
-func (g *Connector) ConnectorSender(ctx *plugin.GinContext, receiverURL string) (redirectURL string) {
+func (g *Connector2) ConnectorSender(ctx *plugin.GinContext, receiverURL string) (redirectURL string) {
 	oauth2Config := &oauth2.Config{
 		ClientID:     g.Config.ClientID,
 		ClientSecret: g.Config.ClientSecret,
@@ -106,7 +106,7 @@ func (g *Connector) ConnectorSender(ctx *plugin.GinContext, receiverURL string) 
 	return oauth2Config.AuthCodeURL("state")
 }
 
-func (g *Connector) ConnectorReceiver(ctx *plugin.GinContext, receiverURL string) (userInfo plugin.ExternalLoginUserInfo, err error) {
+func (g *Connector2) ConnectorReceiver(ctx *plugin.GinContext, receiverURL string) (userInfo plugin.ExternalLoginUserInfo, err error) {
 	code := ctx.Query("code")
 	oauth2Config := &oauth2.Config{
 		ClientID:     g.Config.ClientID,
@@ -149,7 +149,7 @@ func (g *Connector) ConnectorReceiver(ctx *plugin.GinContext, receiverURL string
 	return userInfo, nil
 }
 
-func (g *Connector) ConfigFields() []plugin.ConfigField {
+func (g *Connector2) ConfigFields() []plugin.ConfigField {
 	return []plugin.ConfigField{
 		{
 			Name:        "client_id",
@@ -176,8 +176,8 @@ func (g *Connector) ConfigFields() []plugin.ConfigField {
 	}
 }
 
-func (g *Connector) ConfigReceiver(config []byte) error {
-	c := &ConnectorConfig{}
+func (g *Connector2) ConfigReceiver(config []byte) error {
+	c := &Connector2Config{}
 	_ = json.Unmarshal(config, c)
 	g.Config = c
 	return nil
