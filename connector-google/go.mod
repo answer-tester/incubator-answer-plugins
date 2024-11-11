@@ -1,4 +1,4 @@
-module github.com/apache/incubator-answer-plugins/connector-google
+module github.com/answer-tester/incubator-answer-plugins/connector-google
 
 go 1.19
 
