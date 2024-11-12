@@ -46,4 +46,3 @@ plugin:
       comment:
         need_review: 需要审核。
         match_word_review: 需要审核, 匹配关键字 "%s".
-        edited_need_review: Edited Needs approval.
