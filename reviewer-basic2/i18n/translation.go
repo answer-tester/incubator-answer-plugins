@@ -23,6 +23,7 @@ const (
 	InfoName                            = "plugin.basic_reviewer2.backend.info.name"
 	InfoDescription                     = "plugin.basic_reviewer2.backend.info.description"
 	ConfigReviewPostLabelAll            = "plugin.basic_reviewer2.backend.config.review_post.label_all"
+	ConfigReviewPostLabelEdit           = "plugin.basic_reviewer2.backend.config.review_post.label_edit"
 	ConfigReviewPostLabelFirst          = "plugin.basic_reviewer2.backend.config.review_post.label_first"
 	ConfigReviewPostTitle               = "plugin.basic_reviewer2.backend.config.review_post.title"
 	ConfigReviewPostDescription         = "plugin.basic_reviewer2.backend.config.review_post.description"

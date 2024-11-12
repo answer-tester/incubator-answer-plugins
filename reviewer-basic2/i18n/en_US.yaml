@@ -20,15 +20,17 @@ plugin:
     backend:
       info:
         name:
-          other: Review Basic2
+          other: Edit to Review
         description:
-          other: Generic review rule plugin that was edited by me
+          other: Make edited posts back to review plugin
       config:
         review_post:
           title:
             other: Before a post appears
           label_all:
             other: Post must be manually approved
+          label_edit:
+            other: Edited posts go back to review
           label_first:
             other: Post author must have a previously approved post
           description:
