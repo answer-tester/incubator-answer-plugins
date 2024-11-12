@@ -32,5 +32,4 @@ const (
 	ConfigDisallowedKeywordsDescription = "plugin.basic_reviewer2.backend.config.disallowed_post_keywords.description"
 	CommentNeedReview                   = "plugin.basic_reviewer2.backend.comment.need_review"
 	CommentMatchWordReview              = "plugin.basic_reviewer2.backend.comment.match_word_review"
-	CommentEditedNeedsReview			= "plugin.basic_reviewer2.backend.comment.edited_need_review"
 )

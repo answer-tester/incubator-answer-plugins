@@ -22,7 +22,7 @@ plugin:
         name:
           other: Review Basic2
         description:
-          other: Generic review rule plugin
+          other: Generic review rule plugin that was edited by me
       config:
         review_post:
           title:
@@ -46,4 +46,3 @@ plugin:
       comment:
         need_review: Needs approval.
         match_word_review: Needs approval, match words "%s".
-        edited_need_review: Edited Needs approval.

@@ -25,21 +25,21 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/answer-tester/incubator-answer-plugins/util"
+	"github.com/apache/incubator-answer-plugins/util"
 
 	"github.com/answer-tester/incubator-answer-plugins/reviewer-basic2/i18n"
-	"github.com/answer-tester/incubator-answer/plugin"
+	"github.com/apache/incubator-answer/plugin"
 	myI18n "github.com/segmentfault/pacman/i18n"
 )
 
 //go:embed  info.yaml
 var Info embed.FS
 
-type Reviewer2 struct {
-	Config *ReviewerConfig2
+type Reviewer struct {
+	Config *ReviewerConfig
 }
 
-type ReviewerConfig2 struct {
+type ReviewerConfig struct {
 	PostAllNeedReview      bool   `json:"review_post_all"`
 	PostNeedReview         bool   `json:"review_post"`
 	PostReviewKeywords     string `json:"review_post_keywords"`
@@ -47,12 +47,12 @@ type ReviewerConfig2 struct {
 }
 
 func init() {
-	plugin.Register(&Reviewer2{
-		Config: &ReviewerConfig2{},
+	plugin.Register(&Reviewer{
+		Config: &ReviewerConfig{},
 	})
 }
 
-func (r *Reviewer2) Info() plugin.Info {
+func (r *Reviewer) Info() plugin.Info {
 	info := &util.Info{}
 	info.GetInfo(Info)
 
@@ -66,7 +66,7 @@ func (r *Reviewer2) Info() plugin.Info {
 	}
 }
 
-func (r *Reviewer2) Review(content *plugin.ReviewContent) (result *plugin.ReviewResult) {
+func (r *Reviewer) Review(content *plugin.ReviewContent) (result *plugin.ReviewResult) {
 	result = &plugin.ReviewResult{Approved: true, ReviewStatus: plugin.ReviewStatusApproved}
 
 	// If the author is admin, no need to review
@@ -140,7 +140,7 @@ func (r *Reviewer2) Review(content *plugin.ReviewContent) (result *plugin.Review
 	return result
 }
 
-func (r *Reviewer2) ConfigFields() []plugin.ConfigField {
+func (r *Reviewer) ConfigFields() []plugin.ConfigField {
 	return []plugin.ConfigField{
 		{
 			Name:  "review_post_all",
@@ -178,14 +178,14 @@ func (r *Reviewer2) ConfigFields() []plugin.ConfigField {
 	}
 }
 
-func (r *Reviewer2) ConfigReceiver(config []byte) error {
-	c := &ReviewerConfig2{}
+func (r *Reviewer) ConfigReceiver(config []byte) error {
+	c := &ReviewerConfig{}
 	_ = json.Unmarshal(config, c)
 	r.Config = c
 	return nil
 }
 
-func (r *Reviewer2) checkTags(tags []string, keyword string) bool {
+func (r *Reviewer) checkTags(tags []string, keyword string) bool {
 	for _, tag := range tags {
 		if strings.Contains(strings.ToLower(tag), keyword) {
 			return true
