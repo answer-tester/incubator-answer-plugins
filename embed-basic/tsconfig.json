@@ -24,7 +24,7 @@
     "noFallthroughCasesInSwitch": true,
     "types": [
       "@modyfi/vite-plugin-yaml/modules"
-    ]
+    ],
   },
   "references": [
     {

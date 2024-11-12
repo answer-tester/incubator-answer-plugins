@@ -17,36 +17,21 @@
  * under the License.
  */
 
-package uploadfiles
+import EmbedContainer from '../EmbedContainer';
 
-import (
-	"embed"
+const CodePenEmbed = ({ penId }) => {
+  return (
+    <EmbedContainer>
+      <iframe
+        width="100%"
+        height="100%"
+        src={`https://codepen.io/${penId}/embed/preview/${penId}?height=265&theme-id=0&default-tab=result`}
+        title="CodePen Embed"
+        allowTransparency
+        allowFullScreen
+      />
+    </EmbedContainer>
+  );
+};
 
-	"github.com/answer-tester/incubator-answer-plugins/upload-files/i18n"
-	"github.com/answer-tester/incubator-answer-plugins/util"
-	"github.com/answer-tester/incubator-answer/plugin"
-)
-
-//go:embed  info.yaml
-var Info embed.FS
-
-type UploadFilesPlugin struct {
-}
-
-func init() {
-	plugin.Register(&UploadFilesPlugin{})
-}
-
-func (d UploadFilesPlugin) Info() plugin.Info {
-	info := &util.Info{}
-	info.GetInfo(Info)
-
-	return plugin.Info{
-		Name:        plugin.MakeTranslator(i18n.InfoName),
-		SlugName:    info.SlugName,
-		Description: plugin.MakeTranslator(i18n.InfoDescription),
-		Author:      info.Author,
-		Version:     info.Version,
-		Link:        info.Link,
-	}
-}
+export default CodePenEmbed;

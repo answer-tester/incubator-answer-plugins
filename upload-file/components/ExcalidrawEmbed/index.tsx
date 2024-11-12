@@ -17,9 +17,20 @@
  * under the License.
  */
 
-package i18n
+import EmbedContainer from '../EmbedContainer';
 
-const (
-	InfoName        = "plugin.upload_files.backend.info.name"
-	InfoDescription = "plugin.upload_files.backend.info.description"
-)
+const ExcalidrawEmbed = ({ excalidrawId }) => {
+  return (
+    <EmbedContainer height={380}>
+      <iframe
+        title="Excalidraw"
+        width="100%"
+        height="100%"
+        src={`https://excalidraw.com/${excalidrawId}/embed`}
+        frameBorder="0"
+      />
+    </EmbedContainer>
+  );
+};
+
+export default ExcalidrawEmbed;

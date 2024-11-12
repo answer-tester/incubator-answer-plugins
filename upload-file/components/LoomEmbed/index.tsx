@@ -17,19 +17,20 @@
  * under the License.
  */
 
-import UploadFiles from './UploadFiles';
-import i18nConfig from './i18n';
-import { useRenderUploadFiles } from './hooks';
-import info from './info.yaml'
+import EmbedContainer from '../EmbedContainer';
 
-export default {
-  info: {
-    type: info.type,
-    slug_name: info.slug_name,
-  },
-  component: UploadFiles,
-  i18nConfig,
-  hooks: {
-    useRender: [useRenderUploadFiles],
-  },
+const LoomEmbed = ({ loomId }) => {
+  return (
+    <EmbedContainer height={380}>
+      <iframe
+        title="Loom"
+        width="100%"
+        height="100%"
+        src={`https://www.loom.com/embed/${loomId}`}
+        frameBorder="0"
+      />
+    </EmbedContainer>
+  );
 };
+
+export default LoomEmbed;

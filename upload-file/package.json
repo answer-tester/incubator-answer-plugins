@@ -1,27 +1,27 @@
 {
-  "name": "upload-files",
-  "private": true,
-  "author": "Answer.dev",
-  "version": "1.2.9",
+  "name": "upload-file",
+  "version": "1.0.1",
+  "description": "",
   "files": [
     "dist",
     "README.md"
   ],
-  "main": "./dist/upload-files.umd.js",
-  "module": "./dist/upload-files.es.js",
-  "types": "./dist/upload-files.d.ts",
+  "main": "./dist/upload-file.umd.js",
+  "module": "./dist/upload-file.es.js",
+  "types": "./dist/upload-file.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/upload-files.es.js",
-      "require": "./dist/upload-files.umd.js"
+      "import": "./dist/upload-file.es.js",
+      "require": "./dist/upload-file.umd.js"
     }
   },
   "scripts": {
     "dev": "vite build --mode development --watch",
     "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
+  "keywords": [],
+  "author": "Answer.dev",
   "peerDependencies": {
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.0",
@@ -45,8 +45,5 @@
     "typescript": "5.4.2",
     "vite": "^4.4.5",
     "vite-plugin-dts": "^3.9.1"
-  },
-  "dependencies": {
-    "mermaid": "^9.1.7"
   }
 }

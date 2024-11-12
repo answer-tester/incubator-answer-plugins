@@ -22,6 +22,7 @@ package basic
 import (
 	"embed"
 	"encoding/json"
+
 	"github.com/apache/incubator-answer-plugins/util"
 
 	"github.com/apache/incubator-answer-plugins/reviewer-baidu/i18n"

@@ -17,21 +17,19 @@
  * under the License.
  */
 
-module.exports = {
-  root: true,
-  env: { browser: true, es2020: true },
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react-hooks/recommended',
-  ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
-  parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh'],
-  rules: {
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
-    ],
-  },
-}
+import EmbedContainer from '../EmbedContainer';
+
+const FigmaEmbed = ({ url }) => {
+  return (
+    <EmbedContainer height={450}>
+      <iframe
+        style={{ border: 'none' }}
+        width="100%"
+        height="100%"
+        src={`https://www.figma.com/embed?embed_host=share&url=${url}`}
+        allowFullScreen></iframe>
+    </EmbedContainer>
+  );
+};
+
+export default FigmaEmbed;

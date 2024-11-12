@@ -15,14 +15,8 @@
 # specific language governing permissions and limitations
 # under the License.
 
-plugin:
-  upload_files:
-    backend:
-      info:
-        name:
-          other: Upload Files
-        description:
-          other: Upload files in editor
-    frontend:
-      title: 图表
-      text: 图表
+slug_name: upload_file
+type: editor
+version: 1.0.1
+author: answerdev
+link: https://github.com/answer-tester/incubator-answer-plugins/tree/main/upload-file
