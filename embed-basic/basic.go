@@ -22,10 +22,11 @@ package embed_basic
 import (
 	"embed"
 	"encoding/json"
+
 	"github.com/apache/incubator-answer-plugins/util"
 	"github.com/gin-gonic/gin"
 
-	"github.com/apache/incubator-answer-plugins/embed-basic/i18n"
+	"github.com/answer-tester/incubator-answer-plugins/embed-basic/i18n"
 	"github.com/apache/incubator-answer/plugin"
 )
 

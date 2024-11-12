@@ -1,4 +1,4 @@
-module github.com/apache/incubator-answer-plugins/embed-basic
+module github.com/answer-tester/incubator-answer-plugins/embed-basic
 
 go 1.19
 
