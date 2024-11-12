@@ -17,7 +17,7 @@
  * under the License.
  */
 
-package basic
+package basic2
 
 import (
 	"embed"
@@ -42,6 +42,7 @@ type Reviewer struct {
 type ReviewerConfig struct {
 	PostAllNeedReview      bool   `json:"review_post_all"`
 	PostNeedReview         bool   `json:"review_post"`
+	PostEditNeedReview     bool   `json:"review_post_edited"`
 	PostReviewKeywords     string `json:"review_post_keywords"`
 	PostDisallowedKeywords string `json:"disallowed_keywords"`
 }
@@ -76,6 +77,16 @@ func (r *Reviewer) Review(content *plugin.ReviewContent) (result *plugin.ReviewR
 
 	// all post need review
 	if r.Config.PostAllNeedReview {
+		result = &plugin.ReviewResult{
+			Approved:     false,
+			ReviewStatus: plugin.ReviewStatusNeedReview,
+			Reason:       plugin.TranslateWithData(myI18n.Language(content.Language), i18n.CommentNeedReview, nil),
+		}
+		return result
+	}
+
+	// all edited posts need review
+	if r.Config.PostEditNeedReview {
 		result = &plugin.ReviewResult{
 			Approved:     false,
 			ReviewStatus: plugin.ReviewStatusNeedReview,
@@ -151,6 +162,16 @@ func (r *Reviewer) ConfigFields() []plugin.ConfigField {
 				FieldClassName: "mb-0",
 			},
 			Value: r.Config.PostAllNeedReview,
+		},
+		{
+			Name:  "review_post_edited",
+			Type:  plugin.ConfigTypeSwitch,
+			Title: plugin.MakeTranslator(i18n.ConfigReviewPostTitle),
+			UIOptions: plugin.ConfigFieldUIOptions{
+				Label:          plugin.MakeTranslator(i18n.ConfigReviewPostLabelAll),
+				FieldClassName: "mb-0",
+			},
+			Value: r.Config.PostEditNeedReview,
 		},
 		{
 			Name:        "review_post",
