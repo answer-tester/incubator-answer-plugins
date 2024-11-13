@@ -23,7 +23,7 @@ import (
 	"embed"
 	"encoding/json"
 
-	"github.com/apache/incubator-answer-plugins/util"
+	"github.com/answer-tester/incubator-answer-plugins/util"
 	"github.com/gin-gonic/gin"
 
 	"github.com/answer-tester/incubator-answer-plugins/embed-basic/i18n"
