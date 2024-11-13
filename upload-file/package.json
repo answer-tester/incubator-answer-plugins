@@ -1,18 +1,18 @@
 {
-  "name": "upload-file",
-  "version": "1.0.1",
+  "name": "embed-basic",
+  "version": "1.0.4",
   "description": "",
   "files": [
     "dist",
     "README.md"
   ],
-  "main": "./dist/upload-file.umd.js",
-  "module": "./dist/upload-file.es.js",
-  "types": "./dist/upload-file.d.ts",
+  "main": "./dist/embed-basic.umd.js",
+  "module": "./dist/embed-basic.es.js",
+  "types": "./dist/embed-basic.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/upload-file.es.js",
-      "require": "./dist/upload-file.umd.js"
+      "import": "./dist/embed-basic.es.js",
+      "require": "./dist/embed-basic.umd.js"
     }
   },
   "scripts": {

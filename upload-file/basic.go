@@ -17,7 +17,7 @@
  * under the License.
  */
 
-package upload_file
+package embed_basic
 
 import (
 	"embed"

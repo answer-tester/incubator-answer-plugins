@@ -164,9 +164,8 @@ func (r *Reviewer) ConfigFields() []plugin.ConfigField {
 			Value: r.Config.PostAllNeedReview,
 		},
 		{
-			Name:  "review_post_edited",
-			Type:  plugin.ConfigTypeSwitch,
-			Title: plugin.MakeTranslator(i18n.ConfigReviewPostTitle),
+			Name: "review_post_edited",
+			Type: plugin.ConfigTypeSwitch,
 			UIOptions: plugin.ConfigFieldUIOptions{
 				Label:          plugin.MakeTranslator(i18n.ConfigReviewPostLabelEdit),
 				FieldClassName: "mb-0",
