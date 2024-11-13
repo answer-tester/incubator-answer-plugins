@@ -27,7 +27,7 @@ import (
 	"github.com/gin-gonic/gin"
 
 	"github.com/answer-tester/incubator-answer-plugins/embed-basic/i18n"
-	"github.com/apache/incubator-answer/plugin"
+	"github.com/answer-tester/incubator-answer/plugin"
 )
 
 //go:embed  info.yaml
